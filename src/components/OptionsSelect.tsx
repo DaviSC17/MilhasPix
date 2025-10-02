@@ -1,17 +1,12 @@
 import { components, type OptionProps } from "react-select";
+import type { OptionI } from "../config/MenuSelectStyles";
 
-interface OptionsI {
-  label: string;
-  logo: string;
-  alt: string;
-}
-
-export const CustomOptions = (props: OptionProps<OptionsI, false>) => {
+export const CustomOptions = (props: OptionProps<OptionI, false>) => {
   const { label, logo, alt } = props.data;
   return (
     <components.Option {...props}>
-      <div className="flex items-center justify-between cursor-pointer top-">
-        <span className="text-sm leading-5 font-dm-sans font-medium">
+      <div className="flex items-center justify-between cursor-pointer">
+        <span className="text-[#2E3D50]">
           {label}
         </span>
         <img src={logo} alt={alt} />
