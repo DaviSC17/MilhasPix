@@ -5,3 +5,11 @@
 .font-dm-sans {
   font-family: "DM Sans", sans-serif;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
