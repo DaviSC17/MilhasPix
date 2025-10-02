@@ -1,5 +1,11 @@
 import type { StylesConfig } from "react-select";
-import type { OptionI } from "../components/SingleOptionSelect";
+
+export interface OptionI {
+  value: string;
+  label: string;
+  alt?: string;
+  logo?: string;
+}
 
 export const MenuStyles: StylesConfig<OptionI, false> = {
   control: (provided, state) => ({
@@ -12,6 +18,10 @@ export const MenuStyles: StylesConfig<OptionI, false> = {
     "&:hover": {
       borderColor: "#1E90FF",
     },
+    fontFamily: "DM Sans, sans-serif",
+    fontWeight: "600",
+    fontSize: "0.875rem",
+    lineHeight: "1.25rem",
   }),
 
   option: (provided, state) => ({
@@ -21,10 +31,18 @@ export const MenuStyles: StylesConfig<OptionI, false> = {
     "&:hover": {
       backgroundColor: state.isSelected ? "#1e8fff81" : "#1e8fff1f",
     },
+    fontFamily: "DM Sans, sans-serif",
+    fontWeight: "600",
+    fontSize: "0.875rem",
+    lineHeight: "1.25rem",
   }),
 
   menu: (provided) => ({
     ...provided,
     borderColor: "#1E90FF",
+    fontFamily: "DM Sans, sans-serif",
+    fontWeight: "600",
+    fontSize: "0.875rem",
+    lineHeight: "1.25rem",
   }),
 };
