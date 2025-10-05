@@ -1,6 +1,6 @@
 import { components } from "react-select";
 import { type SingleValueProps } from "react-select";
-import type { OptionI } from "../config/MenuSelectStyles";
+import type { OptionI } from "../types/MenuStyles";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 export const CustomSingleValueProduct = (props: SingleValueProps<OptionI>) => {

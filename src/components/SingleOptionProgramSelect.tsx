@@ -1,7 +1,7 @@
 import { components } from "react-select";
 import { PiArrowsCounterClockwiseBold } from "react-icons/pi";
 import { type SingleValueProps } from "react-select";
-import type { OptionI } from "../config/MenuSelectStyles";
+import type { OptionI } from "../types/MenuStyles";
 
 export const CustomSingleValueProgram = (props: SingleValueProps<OptionI>) => {
   const { label, logo, alt } = props.data;
