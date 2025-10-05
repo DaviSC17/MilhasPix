@@ -1,5 +1,5 @@
 import { components, type OptionProps } from "react-select";
-import type { OptionI } from "../config/MenuSelectStyles";
+import type { OptionI } from "../types/MenuStyles";
 
 export const CustomOptions = (props: OptionProps<OptionI, false>) => {
   const { label, logo, alt } = props.data;
