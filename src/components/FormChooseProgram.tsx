@@ -1,6 +1,6 @@
 import Select from "react-select";
 import { CustomOptions } from "../components/OptionsSelect";
-import { optionsConfig } from "../types/ProgramSelectConfig";
+import { optionsConfig } from "../config/ProgramSelectConfig";
 import { CustomSingleValueProgram } from "../components/SingleOptionProgramSelect";
 import { MenuStyles } from "../config/MenuSelectStyles";
 import { optionsProductConfig } from "../types/ProductSelectConfig";
