@@ -6,8 +6,12 @@ export const schemaOfferYourMilles: ZodTypeAny = z.object({
   millesValue: z
     .string()
     .min(1, "Insira um valor")
-    .refine((val) => valueForApi(val) > 0, {
-      message: "O valor deve ser maior que 0",
+    .refine((value) => {
+      const numericValue  = valueForApi(value);
+      return numericValue  >= 14 && numericValue  <= 16.56;
+    }, {
+      message: "O valor deve estar entre R$14,00 e R$16,56",
     }),
   milesPerPassenger: z.boolean().optional(),
 });
+
