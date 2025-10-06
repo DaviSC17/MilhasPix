@@ -43,124 +43,146 @@ export const FormYourMiles = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="flex flex-col h-full w-full  self-center relative  gap-6  rounded-lg"
+      className="flex flex-col h-full w-full relative gap-6 rounded-lg lg:h-fit lg:flex-row lg:flex-1"
     >
-      <div className="flex flex-col border-1 border-[#E2E2E2] relative  gap-6 p-4 rounded-lg">
-        <h2 className="text-[#2E3D50] flex gap-2 font-dm-sans font-semibold leading-7 ">
-          <span className="text-[#1E90FF] text-lg">02.</span> Oferte suas milhas
-        </h2>
-        <hr className="absolute w-full h-[0.0625rem] left-0 top-[3.1rem] text-[#E2E2E2]" />
-
-        <fieldset className="flex flex-col gap-2">
-          <h3 className="leading-[160%] font-dm-sans font-semibold text-[#2E3D50]">
-            Quero receber
-          </h3>
-
-          <Controller
-            name="wantToReceive"
-            control={control}
-            defaultValue={NewOffer?.secondStep?.wantToReceive}
-            render={({ field, fieldState }) => (
-              <div className="flex flex-col gap-2">
-                <ListWantReceive
-                  value={field.value}
-                  onChange={field.onChange}
-                  className={`${fieldState.error && "border-red-500 "}`}
-                />
-                {fieldState.error && (
-                  <span className="text-red-500 text-sm self-center animate-pulse">
-                    {fieldState.error.message}
-                  </span>
-                )}
-              </div>
-            )}
+      <div className="flex flex-col gap-4 max-lg:h-full">
+        <div className="flex flex-col border-1 border-[#E2E2E2] h-fit relative gap-6 p-4 rounded-lg ">
+          <h2 className="text-[#2E3D50] flex gap-2 font-dm-sans font-semibold leading-7">
+            <span className="text-[#1E90FF] text-lg">02.</span> Oferte suas
+            milhas
+          </h2>
+          <div
+            className="absolute w-full h-[0.0625rem] left-0 top-[3.1rem] bg-[#E2E2E2]"
+            role="presentation"
+            aria-hidden="true"
           />
-        </fieldset>
 
-        <fieldset className="space-y-4">
           <fieldset className="flex flex-col gap-2">
             <h3 className="leading-[160%] font-dm-sans font-semibold text-[#2E3D50]">
-              Milhas ofertadas
-            </h3>
-            <DisabledInput
-              Icon={PiAirplaneInFlight}
-              colorIcon="#1E90FF"
-              value="10.000"
-              textColor="#2E3D50"
-            />
-          </fieldset>
-          <fieldset className="flex flex-col gap-2">
-            <h3 className="leading-[160%] font-dm-sans font-semibold text-[#2E3D50] ">
-              Valor a cada 1.000 milhas
+              Quero receber
             </h3>
             <Controller
-              defaultValue={NewOffer?.secondStep?.millesValue}
-              name="millesValue"
+              name="wantToReceive"
               control={control}
+              defaultValue={NewOffer?.secondStep?.wantToReceive}
               render={({ field, fieldState }) => (
-                <>
-                  <div className="relative w-full">
-                    <span
-                      className={`font-dm-mono font-medium leading-9 tracking-wider absolute top-1/2 left-1.5 -translate-y-1/2 bg-[#1e8fff1c] px-2 rounded-full  ${
-                        fieldState.error && "bg-red-200 text-red-900"
-                      }`}
-                    >
-                      R$
-                    </span>
-                    <input
-                      maxLength={10}
-                      type="text"
-                      placeholder="0,00"
-                      onChange={(e) => {
-                        createCurrencyFormatter(e, field.onChange, setValue);
-                      }}
-                      value={value}
-                      className={`w-full border-1 px-4 py-2 border-[#E2E2E2] rounded-full font-dm-mono font-medium text-[0.875rem] leading-8 tracking-wider text-[#2E3D50]  focus:outline-none focus:ring-2 focus:ring-[#1E90FF] pl-12.5 ${
-                        fieldState.error &&
-                        "border-red-500 placeholder:text-red-200 text-red-400"
-                      }`}
-                    />
-                    <HiOutlineChevronDoubleDown
-                      size={20}
-                      className={` text-[#1E90FF] ${
-                        fieldState.error && "text-red-500"
-                      } absolute top-1/2 right-3 -translate-y-1/2`}
-                    />
-                  </div>
+                <div className="flex flex-col gap-2">
+                  <ListWantReceive
+                    value={field.value}
+                    onChange={field.onChange}
+                    className={`${fieldState.error && "border-[#dc2b2b]"}`}
+                  />
                   {fieldState.error && (
-                    <span className="ml-4 text-red-500 text-sm animate-pulse">
-                      O valor tem que ser maior que 0
+                    <span className="text-[#dc2b2b] font-medium text-sm self-center animate-pulse">
+                      {fieldState.error.message}
                     </span>
                   )}
-                </>
+                </div>
               )}
             />
           </fieldset>
-          <Ranking value={value} />
-        </fieldset>
-        <Controller
-          defaultValue={NewOffer?.secondStep?.milesPerPassenger}
-          name="milesPerPassenger"
-          control={control}
-          render={({ field }) => (
-            <CheckBox value={field.value} onChange={field.onChange} />
-          )}
-        />
-      </div>
-      <Expandable
-        colorIcon="#1E90FF"
-        title="Média de milhas"
-        Icon={LuPlus}
-        about="Ao vender mais de 20.000 milhas, ative as Opções Avançadas para definir a média de milhas por emissão."
-      />
-      <div className="mt-auto space-y-2">
-        <ReceiveUntil />
 
-        <div className=" flex items-center justify-between">
-          <BackButton />
-          <WhatProgress />
-          <ContinueButton value="Prosseguir" />
+          <fieldset className="space-y-4 lg:flex lg:gap-2">
+            <fieldset className="flex flex-col gap-2 flex-1">
+              <h3 className="leading-[160%] font-dm-sans font-semibold text-[#2E3D50]">
+                Milhas ofertadas
+              </h3>
+              <DisabledInput
+                Icon={PiAirplaneInFlight}
+                colorIcon="#1E90FF"
+                value="10.000"
+                textColor="#2E3D50"
+              />
+            </fieldset>
+            <fieldset className="flex flex-col gap-2 flex-1">
+              <h3 className="leading-[160%] font-dm-sans font-semibold text-[#2E3D50]">
+                Valor a cada 1.000 milhas
+              </h3>
+              <Controller
+                defaultValue={NewOffer?.secondStep?.millesValue}
+                name="millesValue"
+                control={control}
+                render={({ field, fieldState }) => (
+                  <>
+                    <div className="relative w-full">
+                      <span
+                        className={`font-dm-mono font-medium leading-9 tracking-wider absolute top-1/2 left-1.5 -translate-y-1/2 bg-[#1e8fff1c] px-2 rounded-full ${
+                          fieldState.error && "bg-red-200 text-red-900"
+                        }`}
+                      >
+                        R$
+                      </span>
+                      <input
+                        maxLength={10}
+                        type="text"
+                        placeholder="0,00"
+                        onChange={(e) => {
+                          createCurrencyFormatter(e, field.onChange, setValue);
+                        }}
+                        value={value}
+                        className={`w-full border-1 px-4 py-2 border-[#E2E2E2] rounded-full font-dm-mono font-medium text-[0.875rem] leading-8 tracking-wider text-[#2E3D50] focus:outline-none focus:ring-2 focus:ring-[#1E90FF] pl-12.5 ${
+                          fieldState.error && "border-[#dc2b2b] text-[#dc2b2b]"
+                        }`}
+                      />
+                      <HiOutlineChevronDoubleDown
+                        size={20}
+                        className={`text-[#1E90FF] ${
+                          fieldState.error && "text-[#dc2b2b]"
+                        } absolute top-1/2 right-3 -translate-y-1/2`}
+                      />
+                    </div>
+                    {fieldState.error && (
+                      <span className="ml-4 text-[#DC2B2B] font-medium text-sm animate-pulse xl:bg-[#DC2B2B1A] w-fit xl:px-4 xl:py-1 xl:rounded-full xl:absolute xl:top-3 xl:right-3">
+                        {fieldState.error.message}
+                      </span>
+                    )}
+                  </>
+                )}
+              />
+            </fieldset>
+            <Ranking
+              value={value}
+              className="lg:hidden"
+              classNameTitle="hidden!"
+            />
+          </fieldset>
+
+          <Controller
+            defaultValue={NewOffer?.secondStep?.milesPerPassenger}
+            name="milesPerPassenger"
+            control={control}
+            render={({ field }) => (
+              <CheckBox value={field.value} onChange={field.onChange} />
+            )}
+          />
         </div>
+        <Expandable
+          colorIcon="#1E90FF"
+          title="Média de milhas"
+          Icon={LuPlus}
+          className="lg:hidden"
+          about="Ao vender mais de 20.000 milhas, ative as Opções Avançadas para definir a média de milhas por emissão."
+        />
+        <div className="max-lg:mt-auto flex flex-col gap-2">
+          <ReceiveUntil className="lg:hidden" titleClassName="lg:hidden" />
+          <div className="flex items-center justify-between">
+            <BackButton />
+            <WhatProgress />
+            <ContinueButton value="Prosseguir" />
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden lg:flex flex-col lg:gap-6 ">
+        <Expandable
+          colorIcon="#1E90FF"
+          title="Média de milhas"
+          Icon={LuPlus}
+          className="max-lg:hidden lg:p-3 lg:max-w-62 lg:h-fit"
+          about="Ao vender mais de 20.000 milhas, ative as Opções Avançadas para definir a média de milhas por emissão."
+        />
+        <Ranking value={value} className="hidden lg:flex" />
+        <ReceiveUntil className="hidden lg:flex" />
       </div>
     </form>
   );
