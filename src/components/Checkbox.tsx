@@ -22,7 +22,7 @@ export const CheckBox = ({
       </label>
 
       {value && (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-3">
           <input
             disabled
             value={"10.000"}
