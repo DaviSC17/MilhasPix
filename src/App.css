@@ -17,3 +17,21 @@ body,
   display: flex;
   flex-direction: column;
 }
+
+.arrow-slide {
+  display: inline-block;
+}
+
+.group:hover .arrow-slide {
+  animation: slideX 0.8s ease-in-out infinite;
+}
+
+@keyframes slideX {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+}

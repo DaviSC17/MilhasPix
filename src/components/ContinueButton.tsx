@@ -10,7 +10,7 @@ export const ContinueButton = ({ value }: { value: string }) => {
       <IoArrowForward
         color="white"
         size={20}
-        className="mt-0.5 group-hover:animate-pulse"
+        className="mt-0.5 arrow-slide"
       />
     </button>
   );
