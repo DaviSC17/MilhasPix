@@ -163,14 +163,14 @@ export const FormChooseProgram = () => {
           colorIcon="#8F8F8F"
           title="Selecione o Programa"
           Icon={FiMinus}
-          className="lg:p-3 lg:max-w-62 lg:h-fit lg:hidden xl:flex"
+          className="lg:hidden"
           about="Escolha de qual programa de fidelidade você quer vender suas milhas.
           Use apenas contas em seu nome."
         />
       </div>
 
       <hr className="absolute bottom-16 text-[#E2E2E2] w-full h-0.5 left-0 lg:hidden" />
-      <div className="flex mt-auto items-center lg:justify-end max-[400px]:w-[72%] justify-between ml-auto min-[400px]:w-3/5 lg:w-full xl:max-w-[68%] xl:ml-0 2xl:max-w-[50rem]">
+      <div className="flex mt-auto items-center lg:justify-end max-[400px]:w-[72%] justify-between ml-auto min-[400px]:w-3/5">
         <WhatProgress />
         <ContinueButton value="Prosseguir" />
       </div>
