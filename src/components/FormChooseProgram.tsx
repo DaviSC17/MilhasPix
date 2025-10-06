@@ -173,7 +173,7 @@ export const FormChooseProgram = () => {
       </div>
 
       <div
-        className="absolute bottom-16 bg-[#E2E2E2] w-full h-0.5 left-0 lg:hidden"
+        className="absolute bottom-16 bg-[#E2E2E2] w-[100vw] h-0.5 -left-4 lg:hidden"
         role="presentation"
         aria-hidden="true"
       />
