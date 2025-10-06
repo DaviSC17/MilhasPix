@@ -1,7 +1,8 @@
 import { components } from "react-select";
 import { type PlaceholderProps } from "react-select";
-import type { OptionI } from "../config/MenuSelectStyles";
+
 import { FiLock } from "react-icons/fi";
+import type { OptionI } from "../types/MenuStyles";
 
 export const CustomPlaceholderSelectCpfs = (props: PlaceholderProps<OptionI>) => {
   return (
