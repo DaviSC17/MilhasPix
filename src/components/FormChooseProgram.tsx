@@ -29,7 +29,6 @@ export const FormChooseProgram = () => {
     handleStepSubmit(SetNewOffer, "firstStep", data, navigate, "/newOffer/2");
   });
 
-
   return (
     <form
       className="flex flex-col h-full gap-4 relative lg:h-fit lg:flex-1"
@@ -41,7 +40,11 @@ export const FormChooseProgram = () => {
             <span className="text-[#1E90FF] text-lg">01.</span> Escolha o
             programa
           </h2>
-          <hr className="absolute w-full h-[0.0625rem] left-0 top-[3.1rem] text-[#E2E2E2]" />
+          <div
+            className="absolute w-full h-[0.0625rem] left-0 top-[3.1rem] bg-[#E2E2E2]"
+            role="presentation"
+            aria-hidden="true"
+          />
           <fieldset className="mt-2">
             <Controller
               name="program"
@@ -169,7 +172,11 @@ export const FormChooseProgram = () => {
         />
       </div>
 
-      <hr className="absolute bottom-16 text-[#E2E2E2] w-full h-0.5 left-0 lg:hidden" />
+      <div
+        className="absolute bottom-16 bg-[#E2E2E2] w-full h-0.5 left-0 lg:hidden"
+        role="presentation"
+        aria-hidden="true"
+      />
       <div className="flex mt-auto items-center lg:justify-end max-[400px]:w-[72%] justify-between ml-auto min-[400px]:w-3/5">
         <WhatProgress />
         <ContinueButton value="Prosseguir" />
