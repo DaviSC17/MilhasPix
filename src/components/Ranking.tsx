@@ -6,10 +6,11 @@ import { valueForApi } from "../utils/formatNumber";
 
 export const Ranking = ({ value, classNameTitle, ...props }: RankingI) => {
   const [response, setResponse] = useState<GetRankingI[]>();
-
+  
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     if (valueForApi(value) <= 0 || isNaN(valueForApi(value))) return;
-    GET(`/api/simulate-ranking?mile_value=${valueForApi(value)}`).then(
+    GET(`${apiUrl}/simulate-ranking?mile_value=${valueForApi(value)}`).then(
       setResponse
     );
   }, [value]);
