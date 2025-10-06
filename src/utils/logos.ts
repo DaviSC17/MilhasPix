@@ -1,4 +1,4 @@
-import TudoAzulLogo from "../assets/TudoAzulLogo.svg";
+import TudoAzulLogo from "../assets/TudoAzulLogoListMyOffers.svg";
 import SmilesLogo from "../assets/SmilesLogoListMyOffer.svg";
 import AirPortugalLogo from "../assets/AirPortugalLogo.svg";
 import LatamPassLogo from "../assets/LatamPassLogo.svg";
