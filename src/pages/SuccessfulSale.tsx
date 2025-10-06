@@ -7,7 +7,7 @@ import { Steps } from "../components/Steps";
 export const SuccessfulSale = () => {
   return (
     <section className="flex px-4 py-5 h-full items-center justify-center lg:items-start lg:gap-10">
-      <Steps />
+      <Steps passoAtual={4}/>
       <div className="flex flex-col h-full  md:px-10 max-md:max-w-2xl max-md:mx-auto lg:flex-1 lg:border-1 lg:border-[#E2E2E2] lg:rounded-lg  lg:h-[40rem] lg:justify-center lg:gap-6">
         <div className="flex flex-col items-center justify-center max-lg:flex-1 text-center">
           <img src={PartyHat} alt="Cone de festa" />
