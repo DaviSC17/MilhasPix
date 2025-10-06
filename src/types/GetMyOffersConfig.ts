@@ -1,4 +1,4 @@
-interface MyOfferI {
+export interface MyOfferI {
   offerId: string;
   offerStatus: string;
   loyaltyProgram: string;
