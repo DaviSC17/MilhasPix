@@ -1,8 +1,11 @@
 import { FormYourMiles } from "../components/FormOfferYourMiles";
 
+import { Steps } from "../components/Steps";
+
 export const OfferYourMiles = () => {
   return (
-    <section className="p-4 flex flex-col gap-3 h-full md:px-10 max-md:max-w-2xl max-md:mx-auto relative">
+    <section className="flex flex-col h-full  md:max-w-4xl md:mx-auto p-4 lg:max-w-[86rem] lg:flex-row lg:px-8 lg:py-8 lg:gap-4 xl:gap-2">
+      <Steps />
       <FormYourMiles />
     </section>
   );
