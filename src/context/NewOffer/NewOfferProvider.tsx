@@ -11,7 +11,7 @@ export const NewOfferProvider = ({
     firstStep: { product: "", program: "" },
     secondStep: {
       wantToReceive: "",
-      millesValue: "",
+      millesValue: "0,00",
       milesPerPassenger: false,
     },
     lastStep: { Email: "" },
