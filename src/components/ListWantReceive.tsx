@@ -12,7 +12,7 @@ export const ListWantReceive = ({
   return (
     <ul
       {...props}
-      className="flex flex-wrap gap-3 justify-center sm:max-w-full max-sm:max-w-96 self-center"
+      className="flex flex-wrap gap-3 justify-center sm:max-w-full max-sm:max-w-96 self-center  lg:max-w-[28rem] xl:max-w-full"
     >
       {optionsWantToReceive.map(({ label, optionValue }) => (
         <li key={optionValue}>
@@ -24,11 +24,19 @@ export const ListWantReceive = ({
                 onChange(optionValue);
               }
             }}
-            className={`flex py-2 rounded-full border-2 text-black cursor-pointer transition duration-300 justify-center font-medium font-dm-sans leading-7 max-[450px]:w-34 md:w-40 focus:outline-none focus:ring-2 focus:ring-[#1E90FF] w-42 ${
-              value === optionValue
-                ? "border-[#1E90FF]"
-                : "border-[#F0F0F0] hover:border-[#1e8fff7e]"
-            } ${props.className}`}
+            className={`
+  flex py-2 rounded-full border-2 text-black cursor-pointer transition duration-300 justify-center
+  font-medium font-dm-sans leading-7
+  w-34 sm:w-33 md:w-40 lg:w-48  xl:w-39.5
+  text-sm lg:text-base
+  focus:outline-none focus:ring-2 focus:ring-[#1E90FF]
+  ${
+    value === optionValue
+      ? "border-[#1E90FF]"
+      : "border-[#F0F0F0] hover:border-[#1e8fff7e]"
+  }
+  ${props.className}
+`}
           >
             <input
               type="radio"
