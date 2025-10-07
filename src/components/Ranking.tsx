@@ -8,9 +8,9 @@ export const Ranking = ({ value, classNameTitle, ...props }: RankingI) => {
   const [response, setResponse] = useState<GetRankingI[]>();
   
   useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL;
+/*     const apiUrl = import.meta.env.VITE_API_URL;  PROXY VITE*/
     if (valueForApi(value) <= 0 || isNaN(valueForApi(value))) return;
-    GET(`${apiUrl}/simulate-ranking?mile_value=${valueForApi(value)}`).then(
+    GET(`/api/simulate-ranking?mile_value=${valueForApi(value)}`).then(
       setResponse
     );
   }, [value]);
