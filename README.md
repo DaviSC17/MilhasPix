@@ -72,10 +72,10 @@ O objetivo do projeto é criar uma aplicação de gerenciamento de ofertas de mi
 
 ## 🛠 Problemas e Soluções Encontradas
 
-- 🚫 Bloqueio de CORS na API
-
-    Para testes locais, utilizado proxy via Vite
-    Em produção, a URL da API precisa estar liberada
+- 🚫 CORS na API (resolvido via proxy em produção)
+    Durante o desenvolvimento, a API apresentava bloqueio de CORS.
+    A solução adotada foi configurar um proxy no Vite para ambiente local e um proxy via Vercel em produção, garantindo o funcionamento sem erros de requisição.
+    Essa abordagem mantém o código limpo e evita expor a URL real da API diretamente no front-end.
 
     ![logo](https://i.ibb.co/xtsFqW5X/image.png)
 
