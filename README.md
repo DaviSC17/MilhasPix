@@ -1,6 +1,6 @@
 # 🚀 MilhasPix - Teste Técnico
 
-![Logo](https://i.ibb.co/dwsLhXPw/Projeto-Milhas-Pix.png)
+![Logo](https://i.imgur.com/9gFhx3w.png)
 
 ---
 
